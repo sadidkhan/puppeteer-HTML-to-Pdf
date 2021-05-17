@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A simple, clean, and responsive HTML invoice template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+
+    <!-- Invoice styling -->
+    <style>
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            text-align: center;
+            color: #777;
+        }
+
+            body a {
+                color: #06f;
+            }
+
+        /*.invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+            .invoice-box table {
+                width: 100%;
+                line-height: inherit;
+                text-align: left;
+                border-collapse: collapse;
+            }
+
+                .invoice-box table td {
+                    padding: 5px;
+                    vertical-align: top;
+                }
+
+                .invoice-box table tr td:nth-child(2) {
+                    text-align: right;
+                }
+
+                .invoice-box table tr.top table td {
+                    padding-bottom: 20px;
+                }
+
+                    .invoice-box table tr.top table td.title {
+                        font-size: 45px;
+                        line-height: 45px;
+                        color: #333;
+                    }
+
+                .invoice-box table tr.information table td {
+                    padding-bottom: 40px;
+                }
+
+                .invoice-box table tr.heading td {
+                    background: #eee;
+                    border-bottom: 1px solid #ddd;
+                    font-weight: bold;
+                }
+
+                .invoice-box table tr.details td {
+                    padding-bottom: 20px;
+                }
+
+                .invoice-box table tr.item td {
+                    border-bottom: 1px solid #eee;
+                }
+
+                .invoice-box table tr.item.last td {
+                    border-bottom: none;
+                }
+
+                .invoice-box table tr.total td:nth-child(2) {
+                    border-top: 2px solid #eee;
+                    font-weight: bold;
+                }*/
+
+        /*@media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }*/
+
+
+        .statement-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 50px 30px 50px;
+            font-size: 14px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+            .statement-box table {
+                width: 100%;
+                line-height: inherit;
+                text-align: left;
+                border-collapse: collapse;
+                border-spacing: 0;
+                /*font: normal 13px Arial, sans-serif; */
+            }
+
+                .statement-box table tr.heading1 {
+                    background: #777;
+                    font-weight: bold;
+                }
+
+                .statement-box table tr td {
+                    border: 1px solid;
+                    vertical-align: top;
+                    color: #333;
+                    padding: 2px 8px 2px 8px;
+                    text-shadow: 1px 1px 1px #fff;
+                    background: white;
+                }
+
+        .section0 {
+            line-height: 15px;
+            text-align: left;
+        }
+
+        .section1, .section2, .section3 {
+            margin-top: 30px;
+        }
+        
+        .section1 {
+            width: 50%;
+        }
+
+        .section2 div.heading {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .section3 table {
+            page-break-after: always
+        }
+
+            .section3 table tr {
+                page-break-inside: avoid;
+                page-break-after: always
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="statement-box">
+        <div class="section0">
+            <p>sdgsdfgs</p>
+            <p>sdgsdfgs</p>
+            <p>sdgsdfgs</p>
+            <p>sdgsdfgs</p>
+        </div>
+        <div class="section1">
+            <table>
+                <tr>
+                    <td>Registered Number</td>
+                    <td>{{userInfo.registeredNumber}}</td>
+                </tr>
+                <tr>
+                    <td>Registered Email</td>
+                    <td>{{userInfo.registeredEmail}}</td>
+                </tr>
+                <tr>
+                    <td>Inception Date</td>
+                    <td>{{userInfo.inceptionDate}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="section2">
+            <div class="heading">Account Statement</div>
+            <hr style="margin: 2px 0 20px 0">
+            <div>
+                <table>
+                    <tr class="heading1">
+                        <td colspan="3">
+                            Account summary for the period 1 April 2021 - 22 April 2021
+                        </td>
+                    </tr>
+                    <tr class="heading1">
+                        <td>Account Name</td>
+                        <td>1 April Opening Value</td>
+                        <td>22 April Closing Value</td>
+                    </tr>
+                    <tr>
+                        <td>{{account.name}}</td>
+                        <td>{{account.currency}} {{account.openingValue}}</td>
+                        <td>{{account.currency}} {{account.closingValue}}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div class="section3">
+            <table>
+                <tr class="heading1">
+                    <td colspan="4">
+                        Transactions for the period 1 April 2021 - 22 April 2021
+                    </td>
+                </tr>
+                <tr class="heading1">
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Description</td>
+                    <td>Amount (FRW)</td>
+                </tr>
+                {{#each transactions}}
+                <tr>
+                    <td>{{date}}</td>
+                    <td>{{time}}</td>
+                    <td>{{description}}</td>
+                    <td>
+                        {{#if isCredit}}<span>+</span>{{else}}<span>-</span>{{/if}}{{Amount}}
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+    <!--<div style="border-top: solid 1px #bbb; width: 100%; font-size: 9px;
+         padding: 5px 5px 0; color: #bbb; position: relative;">
+        <div style="position: absolute; left: 5px; top: 5px;">
+            <span class="date"></span>
+            <p>Customer service: 5090</p>
+            <p><a href="https://www.spenn.com">www.spenn.com</a></p>
+        </div>
+        <div style="position: absolute; right: 5px; top: 5px;">
+            <p>SPENN RWANDA Limited</p>
+            <p>Nyarugenge, Nyarugenge,</p>
+            <p>Umujyi wa Kigali, RWANDA</p>
+        </div>
+        <div style="position: absolute; right: 5px; top: 5px;">
+            Page<span class="pageNumber"></span>of<span class="totalPages"></span>
+        </div>
+    </div>-->
+</body>
+</html>
