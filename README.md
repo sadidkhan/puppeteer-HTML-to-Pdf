@@ -1,4 +1,4 @@
-# puppeteerPdf
+# Sample application to create PDF using Puppeteer
 
 I had a plan to create an azure function that is responsible to generate pdf from html, I did not find any free library in .net core. Most of them are paid.
 
