@@ -1,5 +1,7 @@
 # Sample application to create PDF from HTML using Puppeteer
 
+## Puppeteer .Net HTML to PDF
+
 I had a plan to create an azure function that is responsible to generate pdf from html, I did not find any free library in .net core. Most of them are paid.
 
 After a lot of googling, I came to know about a popular nodes js library [Puppeteer](https://github.com/puppeteer/puppeteer). That directs me to [Puppeteer Sharp](https://www.puppeteersharp.com/), a .NET port of the official Node.JS Puppeteer API. So, I used this library to create pdf.
